@@ -1,0 +1,11 @@
+### VIDEOS:
+Lecture 116 - Color Theory (Spring 2016 - Evening) - 1:18:39 - https://www.youtube.com/watch?v=26pSU2UHznU
+Additive and Subtractive Color - 12:32 - https://www.youtube.com/watch?v=5Z417hM-RAA
+
+
+### ARTICLES:
+
+
+
+### DEMOS PYTHON:
+Image Segmentation Using Color Spaces in OpenCV + Python: https://realpython.com/python-opencv-color-spaces/

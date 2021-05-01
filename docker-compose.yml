@@ -1,0 +1,8 @@
+services:
+  notebook:
+    image: "opencv:v0"
+    ports:
+      - "8888:8888"
+    container_name: opencvcourse
+    volumes: 
+      - .:/opencv/project

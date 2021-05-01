@@ -1,0 +1,98 @@
+name: opencvcourse
+channels: 
+  - anaconda
+  - conda-forge
+  - defaults
+  - pytorch
+dependencies:
+  - python=3.7
+  - pip=20.2.4
+  - pip:
+    - numpy==1.18.5
+    - pandas==1.1.3
+    - scikit-learn==0.23.2
+    - ipykernel
+    - jupyter==1.0.0
+    - tqdm==4.46.1
+    - matplotlib==3.3.3
+    - seaborn==0.10.1
+    - tensorflow==2.4.0
+    - keras==2.4.3
+    - opencv-python==4.5.1.48
+    - cmake==3.18.4
+    - dlib==19.21.1
+    - pillow==5.4.1
+    - plotly==3.7.0
+
+# pip install torch==1.7.1+cpu torchvision==0.8.2+cpu torchaudio===0.7.2 -f https://download.pytorch.org/whl/torch_stable.html
+# python -m ipykernel install --user --name opencv_torch_v3 --display-name "opencv+torch+v3"
+
+
+# WORKING
+# name: opencvcourse
+# channels: 
+#   - anaconda
+#   - conda-forge
+#   - defaults
+#   - pytorch
+# dependencies:
+#   - python=3.7
+#   - pip=20.2.4
+# #  - pytorch=1.6.0+cpu
+# #  - torchvision=0.7.0+cpu
+#   - pip:
+#     - numpy==1.18.5
+#     - pandas==1.1.3
+#     - scikit-learn==0.23.2
+#     - ipykernel
+#     - jupyter==1.0.0
+#     - tqdm==4.46.1
+#     - matplotlib==3.3.3
+#     - seaborn==0.10.1
+#     - tensorflow==2.4.0
+#     - keras==2.4.3
+#     - opencv-python==4.5.1.48
+#     - cmake==3.18.4
+#     - dlib==19.21.1
+#     - pillow==5.4.1
+#     - plotly==3.7.0
+
+# pip install torch==1.6.0+cpu torchvision==0.7.0+cpu  -f https://download.pytorch.org/whl/torch_stable.html
+
+# python -m ipykernel install --user --name opencv_torch --display-name "opencv+torch"
+# python -m ipykernel install --user --name opencv_torch_v2 --display-name "opencv+torch+v2"
+
+# WORKING
+# name: opencvcourse
+# channels: 
+#   - anaconda
+#   - conda-forge
+#   - defaults
+#   - pytorch
+# dependencies:
+#   - python=3.7
+#   - pip=20.2.4
+#   - pytorch=1.6.0
+#   - torchvision=0.7.0
+#   - cudatoolkit=10.2
+#   - pip:
+#     - numpy==1.18.5
+#     - pandas==1.1.3
+#     - scikit-learn==0.23.2
+#     - ipykernel
+#     - jupyter==1.0.0
+#     - tqdm==4.46.1
+#     - matplotlib==3.3.3
+#     - seaborn==0.10.1
+#     - tensorflow==2.4.0
+#     - keras==2.4.3
+#     - opencv-python==4.5.1.48
+#     - cmake==3.18.4
+#     - dlib==19.21.1
+#     - pillow==5.4.1
+#     - plotly==3.7.0
+
+
+
+
+

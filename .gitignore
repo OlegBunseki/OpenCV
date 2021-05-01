@@ -1,0 +1,23 @@
+# Folders
+.vscode/
+
+# Files in a folder
+output/*
+input/videos/*
+*/__pycache__/*
+_helper_functions/*
+_secrets/*
+
+# Files start / endings
+*.weights
+*.tf*
+
+*.MOV
+*.mp4
+
+
+# Specific Files
+yolov3-10.onnx
+yolov3.tf.data-00000-of-00001
+checkpoint
+
