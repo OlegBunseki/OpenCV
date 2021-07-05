@@ -14,6 +14,12 @@ _secrets/*
 
 *.MOV
 *.mp4
+*.avi
+
+*.cfg
+*.weights
+*.caffemodel
+*.pb
 
 
 # Specific Files
