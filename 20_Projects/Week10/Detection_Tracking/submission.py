@@ -1,11 +1,8 @@
 # Enter your code here
 import cv2
-import matplotlib.pyplot as plt
 import numpy as np
 import argparse
-
-DATA_PATH = './data/'
-MODEL_PATH = './weights/'
+import time
 
 
 def drawTrack(box):
@@ -96,13 +93,18 @@ if __name__ == '__main__':
     parser = argparse.ArgumentParser()
 
     parser.add_argument('-v', '--video_path', type=str, default='soccer-ball.mp4', help='Video Path')
-    parser.add_argument('-objt', '--objectnessThreshold', type=float, default='0.5', help='Video Path')    
-    parser.add_argument('-cont', '--confThreshold', type=float, default='0.5', help='Video Path')
-    parser.add_argument('-nms', '--nmsThreshold', type=float, default='0.4', help='Video Path')
-    parser.add_argument('-tt', '--TrackerType', type=str, default='KCF', help='Video Path')
+    parser.add_argument('-objt', '--objectnessThreshold', type=float, default='0.5', help='Objectness Threshold')    
+    parser.add_argument('-cont', '--confThreshold', type=float, default='0.5', help='Confidence Threshold')
+    parser.add_argument('-nms', '--nmsThreshold', type=float, default='0.4', help='NMS Threshold')
+    parser.add_argument('-tt', '--TrackerType', type=str, default='KCF', help='Tracker Type')
+    parser.add_argument('-dp', '--dataPath', type=str, default='./data/', help='Data Path')
+    parser.add_argument('-mp', '--modelPath', type=str, default='./weights/', help='Model Path')
 
 
     args = parser.parse_args()
+
+    DATA_PATH = args.dataPath
+    MODEL_PATH = args.modelPath
 
     if args.TrackerType == 'MIL':
         tracker = cv2.TrackerMIL_create()
@@ -125,8 +127,6 @@ if __name__ == '__main__':
 
     # Load names of classes
     classesFile = MODEL_PATH + "coco.names"
-    classes = None
-
 
     with open(classesFile, 'rt') as f:
         classes = f.read().rstrip('\n').split('\n')
@@ -155,12 +155,9 @@ if __name__ == '__main__':
             if ball_found:
                 init = tracker.init(frame, ball_bbox)
                 track_status = True
-                print('1', frame_count, ball_found, track_status)
                 
         if (frame_count > 0) and (ball_found is True):
             track_status, ball_bbox = tracker.update(frame)
-            print('2', frame_count, track_status)
-
 
         # Tracker
         if init is None:
@@ -182,6 +179,9 @@ if __name__ == '__main__':
             cv2.putText(frame, f'Ball could be detected: {ball_found}', (20,80), cv2.FONT_HERSHEY_SIMPLEX, 0.75, (0, 0, 255), 2)
 
         cv2.imshow('Video', frame)
+
+        # Make the visualisation a little slower
+        # time.sleep(1)
 
         k = cv2.waitKey(1)
 
